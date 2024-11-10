@@ -1,0 +1,181 @@
+<!-- im sorry if the css has some IDs that don't exist, I'm using the CSS from the cutscenes to make it look pretty-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Mode | FreakyFlix</title>
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Bebas Neue", sans-serif;
+        }
+        html, body {
+            height: 100%;
+            background-image: linear-gradient(black, rgb(86, 79, 79));
+            color: rgb(247, 10, 10);
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(53, 52, 52, 0.8);
+    position: absolute;
+    width: 100%; 
+    top: 0;
+    z-index: 10;
+        }
+        .navbar h1 {
+            font-size: 1.8rem;
+        }
+        .navbar a {
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.1rem;
+        }
+        .navbar h2 {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(248, 11, 11);
+            text-align: center;
+            padding: 20px;
+            background: url('../../images/nothingyet.png') center/cover no-repeat;
+            height: 50vh;
+            margin-top: 60px;
+        }
+        
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            flex-grow: 1;
+            margin-top: 20px;
+        }
+        #ispaused {
+            margin-top: 90px;
+            font-size: 1.2rem;
+            color: rgb(241, 230, 230);
+            margin-bottom: 1em;
+            text-align: center;
+        }
+        .button-container {
+            margin-bottom: 1em;
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            background-color: rgb(247, 10, 10);
+            color: white;
+            border: none;
+            padding: 0.5em 1.5em;
+            margin: 0 0.5em;
+            font-size: 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:disabled {
+            background-color: #333;
+            cursor: not-allowed;
+        }
+        button:hover:not(:disabled) {
+            background-color: #f40612;
+        }
+        video {
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
+        }
+        .footer {
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(53, 52, 52, 0.8);
+            font-size: 0.9rem;
+            color: rgb(241, 230, 230);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        #logo {
+            border-radius: 20px;
+            width: 200px;
+            height: 60px;
+        } 
+    </style>
+    
+</head>
+<body>
+    <div class="navbar">
+        <a href="https://freakyflix.freakybob.site"><img id="logo" src="../logo.svg"></a>
+        <h2>Marathon Mode</h2>
+    </div>
+    
+    
+    <div class="video-container">
+        <h2 id="ispaused">Now Playing: Marathon Mode</h2>
+        <video controls src="../movies/murderbob/cutscenes-edited/cutscene1.mp4" id="player" autoplay></video>
+    </div>
+    
+    <div class="footer">
+        &copy; 2024 FreakyFlix. All rights reserved.
+    </div>
+    
+    <script>
+        const player = document.getElementById("player");
+        player.addEventListener('ended',marathon,false);
+        function marathon() {
+            let num = 1
+            num = ++num
+            console.log(num)
+            if (num == "2") {
+                print(num)
+                player.src="../movies/murderbob/cutscenes-edited/cutscene2.mp4"
+                console.log("Successful!")
+            }
+            if (num == "3") {
+                print(num)
+                player.src="../movies/murderbob/cutscenes-edited/cutscene3.mp4"
+                print("Successful 2!")
+            }
+        }
+        function unEdit1() {
+            player.src = "../../movies/murderbob/cutscenes-unedited/cutscene3.mp4";
+            document.getElementById("unedit").disabled = true;
+            document.getElementById("edit").disabled = false;
+        }
+
+        function edit1() {
+            player.src = "../../movies/murderbob/cutscenes-edited/cutscene3.mp4";
+            document.getElementById("edit").disabled = true;
+            document.getElementById("unedit").disabled = false;
+        }
+
+        function pauseSet() {
+            const status = player.paused ? "Paused" : "Now Playing";
+            document.getElementById("ispaused").innerHTML = `${status}: Marathon Mode`;
+            setTimeout(pauseSet, 500);
+        }
+
+        pauseSet();
+    </script>
+</body>
+</html>
