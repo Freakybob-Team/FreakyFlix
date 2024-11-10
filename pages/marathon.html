@@ -141,13 +141,17 @@
     
     <script>
         const player = document.getElementById("player");
+        let num = 1
         player.addEventListener('ended',marathon,false);
-        function marathon() {
-            let num = 1
+        function increaseNum() {
             num = ++num
+        }
+        function marathon() {
+            increaseNum()
             console.log(num)
             if (num == "2") {
                 player.src="../movies/murderbob/cutscenes-edited/cutscene2.mp4"
+                player.addEventListener('ended',increaseNum,false);
             }
             if (num == "3") {
                 player.src="../movies/murderbob/cutscenes-edited/cutscene3.mp4"
