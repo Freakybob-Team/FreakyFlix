@@ -152,9 +152,12 @@
             if (num == "2") {
                 player.src="../movies/murderbob/cutscenes-edited/cutscene2.mp4"
                 player.addEventListener('ended',increaseNum,false);
+                player.play();
             }
             if (num == "3") {
                 player.src="../movies/murderbob/cutscenes-edited/cutscene3.mp4"
+                player.addEventListener('ended',redirectOnEnd,false);
+                player.play();
             }
         }
         function unEdit1() {
