@@ -1,0 +1,96 @@
+ * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Bebas Neue", sans-serif;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-image: linear-gradient(black, rgb(86, 79, 79));
+            color: rgb(247, 10, 10);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer {
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(53, 52, 52, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(53, 52, 52, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar h1 {
+            font-size: 2rem;
+            margin-left: 20px;
+        }
+        .navbar a {
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .hero {
+            background: url('nothingyet.png') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(248, 11, 11);
+            text-align: center;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            max-width: 80%;
+        }
+        
+        .content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            flex-grow: 1;
+        }
+        .content-item {
+            text-align: center;
+        }
+        .content a {
+            color: rgb(178, 35, 35);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .content img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .content a:hover img {
+            transform: scale(1.05);
+        }
+        
+        p {
+            font-size: 1em;
+            color: rgb(241, 230, 230);
+        }
+        .content-item #cutscene1 {
+            margin-left: -23px;
+        }
+ #logo {
+            border-radius: 20px;
+            width: 300px;
+            height: 100px;
+        }  
