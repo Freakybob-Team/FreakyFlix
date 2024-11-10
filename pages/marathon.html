@@ -146,6 +146,13 @@
         function increaseNum() {
             num = ++num
         }
+        function redirectOnEnd() {
+            if(confirm("Do you want to be redirected back to the homepage?")){
+                window.location = "https://freakyflix.freakybob.site";
+            } else {
+                // do nothing
+            }
+        }
         function marathon() {
             increaseNum()
             console.log(num)
